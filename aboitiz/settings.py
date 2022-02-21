@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+from django.conf import settings
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -24,6 +25,7 @@ SECRET_KEY = 'django-insecure-&skz3-f^k$^x3x#o83+u2r73$j8hejcfa4$(mzda%5j%)q(t@z
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+# settings.configure(DEBUG=True)
 
 ALLOWED_HOSTS = []
 
@@ -76,13 +78,22 @@ WSGI_APPLICATION = 'aboitiz.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.postgresql',
+    #     'NAME': 'aboitiz',
+    #     'USER': 'postgres',
+    #     'PASSWORD': 'admin',
+    #     'HOST': 'localhost',
+    #     'PORT': '5432',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'aboitiz',
-        'USER': 'postgres',
-        'PASSWORD': 'admin',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        #'ENGINE': 'mysql',
+        'NAME': 'LSGBDB01',
+        'USER': 'admin',
+        'PASSWORD': 'Q29xKa5z',
+        'HOST': 'lsgbdb01.chkpja1jnnyx.ap-southeast-1.rds.amazonaws.com',
+        'PORT': '3306',
     }
 }
 
